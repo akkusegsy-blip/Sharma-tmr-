@@ -74,6 +74,12 @@
 Paid service available in cheep price contact me me apki apni Ruru randi contact karo muja raat me ungli karne ka Maan hote hai 
     </div>
 
+
+    <!-- MUSIC -->
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+    
     <div class="gallery">
       <img src="pic1.jpg">
       <img src="pic2.jpg">
@@ -92,6 +98,20 @@ Paid service available in cheep price contact me me apki apni Ruru randi contact
   <audio autoplay loop>
     <source src="music.mp3" type="audio/mpeg">
   </audio>
+<!-- Autoplay Script (Mobile Fix) -->
+  <script>
+    const music = document.getElementById('bgMusic');
 
+    function playMusic() {
+      music.play().catch(() => {});
+      document.removeEventListener('click', playMusic);
+    }
+
+    document.addEventListener('click', playMusic);
+    window.addEventListener('load', () => {
+      music.play().catch(() => {});
+    });
+  </script>
+  
 </body>
 </html>
